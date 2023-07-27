@@ -41,7 +41,6 @@ export function decimalesARomanos (decimal) {
   const centenasSimbolos = calcularSimbolo(centenas, diccionario.centenas)
   const decenasSimbolos = calcularSimbolo(decenas, diccionario.decenas)
   const unidadesSimbolos = calcularSimbolo(unidades, diccionario.unidades)
-  console.log(milesimas, centenas, decenas, unidades, decimal)
   return milesimasSimbolos + centenasSimbolos + decenasSimbolos + unidadesSimbolos
 }
 
@@ -69,3 +68,5 @@ export function calcularSimbolo (numero, baseActual) {
   }
   return resultado
 }
+
+// console.log(decimalesARomanos(3999))
