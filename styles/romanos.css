@@ -1,0 +1,117 @@
+.romanos{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 20px;
+    gap: 10px;
+
+    color: var(--secondary-ps-color);
+}
+
+.romanos-descripcion{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    gap: 15px;
+    width: 100%;
+    align-items: start;
+    grid-auto-flow: dense;
+}
+
+.ancho {
+    grid-column: span 2;
+}
+.alto {
+    grid-row: span 2;
+}
+
+.tabla{
+    max-width: 350px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: var(--third-color);
+}
+.tabla tr:nth-child(even){
+    background-color: var(--primary-color);
+}
+th, td {
+    padding: 5px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 450px;
+    list-style: none;
+}
+li {
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--secondary-color);
+    color: rgba(0, 0, 0, 0.607);
+    font-weight: 700;
+}
+p.info{
+    color: var(--danger);
+    font-style: italic;
+}
+.romanos p{
+    justify-self: stretch;
+    box-sizing: border-box;
+    max-width: 450px;
+    line-height: 30px;
+    background-color: var(--third-ps-color);
+    padding: 0.5em;
+    margin: 0;
+    border-radius: 5px;
+    font-weight: 700;
+    color: var(--third-color);
+
+    box-shadow: 1px 1px 5px gray;
+}
+
+.romanos-interactivo{
+    max-width: 450px;
+}
+.romanos-form{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 30px 0;
+}
+.romanos-form input{
+    font-size: inherit;
+    transition: all .1s;
+    
+}
+.romanos-form input:focus{
+    transition: all .1s;
+    border: none;
+    box-shadow: 2px 2px 10px var(--secondary-color);
+}
+
+.salidaDecimalRomano, .salida{
+    background-color: var(--secondary-color);
+    color: var(--third-color);
+    min-width: 100px;
+    max-width: 300px;
+    min-height: 50px;
+    
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.salidaDecimalRomano .span-salida{
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.salidaRomanoDecimal .span-salida{
+    display: block;
+    font-size: 1.5rem;
+}
+

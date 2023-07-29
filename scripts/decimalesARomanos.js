@@ -54,7 +54,6 @@ export function calcularSimbolo (numero, baseActual) {
 
   const unidadSimbolo = baseActual.unidad
 
-  console.log(baseSimbolo, mediaBaseSimbolo, unidadSimbolo)
   if (numero === 9) return (unidadSimbolo + baseSimbolo)
   if (numero > 5) {
     resultado += mediaBaseSimbolo

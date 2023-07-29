@@ -1,5 +1,4 @@
-import fizzbuzz from './scripts/fizzbuzz.js'
-import { fizzbuzzParticular } from '../scripts/fizzbuzz.js'
+import { fizzbuzzParticular, fizzbuzz } from '../scripts/fizzbuzz.js'
 import { describe, it, expect } from 'vitest'
 
 describe.skip('fizzbuzz', () => {

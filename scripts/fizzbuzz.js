@@ -1,4 +1,4 @@
-function fizzbuzz (numero) {
+export function fizzbuzz (numero) {
   if (typeof numero !== 'number') throw new Error('Debe propocionar un numero')
   if (Number.isInteger(numero) === false) throw new Error('Debe propocionar un numero entero')
 
@@ -19,4 +19,3 @@ export function fizzbuzzParticular (number) {
 
   return frase
 }
-export default fizzbuzz

@@ -24,7 +24,7 @@ describe.skip('Son numeros romanos: ', () => {
   })
 })
 
-describe.skip('Numeros Romanos: debe retornar', () => {
+describe('Numeros Romanos: debe retornar', () => {
   it('Debe ser una funcion', () => {
     expect(romanosADecimales).toBeTypeOf('function')
   })
@@ -118,7 +118,7 @@ describe.skip('Numeros Romanos: debe retornar', () => {
   })
 })
 
-describe.skip('Numeros romanos: Debe caer cuando ', () => {
+describe('Numeros romanos: Debe caer cuando ', () => {
   it('Debe lanzar error si no se le pasan argumentos', () => {
     expect(() => romanosADecimales()).toThrow()
   })
@@ -136,7 +136,7 @@ describe.skip('Numeros romanos: Debe caer cuando ', () => {
     expect(() => romanosADecimales('IC')).toThrow()
     expect(() => romanosADecimales('XM')).toThrow()
   })
-  it('Debe lanzar error si se le pasa IIII pues no es un numero valido', () => {
+  it('Debe lanzar error si se le pasa IIII pues las repeticiones no pueden ser mas de 3', () => {
     expect(() => romanosADecimales('IIII')).toThrow()
   })
   it('Debe lanzar error si se le pasa LM o VC pues medias bases no restan a bases', () => {
@@ -154,5 +154,14 @@ describe.skip('Numeros romanos: Debe caer cuando ', () => {
   })
   it('Debe lanzar error si se la pasa LXXXIIII pues no es un numero valido', () => {
     expect(() => romanosADecimales('LXXXIIII')).toThrow()
+  })
+  it('Debe lanzar error si se la pasa XIIV pues una repeticion solo puede ser seguida de un numero menor o igual', () => {
+    expect(() => romanosADecimales('XIIV')).toThrow()
+  })
+  it('Debe lanzar error si se la pasa IVI pues despues de restar una media base no se puede sumar la base anterior a ella', () => {
+    expect(() => romanosADecimales('IVI')).toThrow()
+  })
+  it('Debe lanzar error si se la pasa XCC porque despues de una resta a la base no puede seguir un numero mayor o igual', () => {
+    expect(() => romanosADecimales('XCC')).toThrow()
   })
 })

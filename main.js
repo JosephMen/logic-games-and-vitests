@@ -1,24 +1,56 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+/* eslint-disable no-undef */
+import { fizzbuzzParticular, fizzbuzz } from './scripts/fizzbuzz'
+import { decimalesARomanos } from './scripts/decimalesARomanos'
+import { romanosADecimales } from './scripts/romanosADecimales'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const formFizzBuzz = document.querySelector('.form-fizzbuzz')
+const fizzbuzzSalida = document.querySelector('.fizzbuzz-salida')
 
-setupCounter(document.querySelector('#counter'))
+const formDecimalARomano = document.querySelector('.decimales-form')
+const salidaDecimalRomano = document.querySelector('.salidaDecimalRomano')
+
+const formRomanoADecimal = document.querySelector('#romanos-form')
+const salidaRomanoDecimal = document.querySelector('.salidaRomanoDecimal')
+
+formFizzBuzz.addEventListener('submit', (event) => {
+  event.preventDefault()
+  let numeroIngresado = fizzBuzzNumber.value
+  if (numeroIngresado) {
+    numeroIngresado = parseInt(numeroIngresado)
+    if (esLista.checked) {
+      const listaFizzBuzz = fizzbuzz(numeroIngresado)
+      fizzbuzzSalida.innerHTML = ''
+      listaFizzBuzz.forEach((valor, index) => {
+        fizzbuzzSalida.innerHTML += `<span class="span-salida"> [${index}]-${valor}</span>`
+      })
+      return
+    }
+    fizzbuzzSalida.innerHTML = `<span class="span-salida">${fizzbuzzParticular(numeroIngresado)}</span>`
+  }
+})
+
+formRomanoADecimal.addEventListener('submit', (event) => {
+  event.preventDefault()
+  if (numeroRomano.value) {
+    const numeroIngresado = numeroRomano.value
+    try {
+      const resultado = romanosADecimales(numeroIngresado)
+      salidaRomanoDecimal.innerHTML = `<span class="span-salida">${resultado}</span>`
+    } catch (e) {
+      salidaRomanoDecimal.innerHTML = `<span class="span-salida">${e.message}</span>`
+    }
+  }
+})
+
+formDecimalARomano.addEventListener('submit', (event) => {
+  event.preventDefault()
+  if (numeroDecimal.value) {
+    const numeroIngresado = parseInt(numeroDecimal.value)
+    try {
+      const resultado = decimalesARomanos(numeroIngresado)
+      salidaDecimalRomano.innerHTML = `<span class="span-salida">${resultado}</span>`
+    } catch (e) {
+      salidaDecimalRomano.innerHTML = `<span class="span-salida">${e.message}</span>`
+    }
+  }
+})
