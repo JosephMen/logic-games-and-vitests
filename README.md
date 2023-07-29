@@ -1,5 +1,5 @@
 # Logic Games
-This project develops some logic games and shows a possible solution, it is proven to work by the number of tests that were developed and passed.
+This project develops some logic games and shows a possible solution, it is proven to work by the number of tests that were developed and passed. You can see the results on this link: [netlify](https://logic-challenges.netlify.app/)
 ## Libraries
     - Vitest for testing
     - Standard lintern for vscode 
